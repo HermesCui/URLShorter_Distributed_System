@@ -1,6 +1,0 @@
-#!/usr/bin/gnuplot --persist
-set term png     # Set the output format to PNG
-set output 'output.png'  # Set the output file name
-set xlabel "Thread count"
-set ylabel "Completion Time [sec]"
-plot "basic.tsv" using 1:2 title 'Threads to Completion Speed Chart' with lines

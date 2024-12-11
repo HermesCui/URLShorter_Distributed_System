@@ -1,0 +1,2 @@
+sqlite3 /virtual/athavans/URLShortner/db/KVStore.db "SELECT * FROM bitly;"
+127.0.0.1 45601 14 PUT 1000

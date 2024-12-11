@@ -1,0 +1,9 @@
+BIN_DIR/
+*.jar
+*.class
+*.log
+
+bin/
+*.jar
+*.class
+*.log

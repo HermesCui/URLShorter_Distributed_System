@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Management Plane</title>
+        <meta name="author" content="a1group99">
+        <meta name="description" content="Management plane for URLShortner Cluster">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <style>
+            * {
+                font-family: 'Roboto', sans-serif;
+            }
+            body {
+                background-color: #f5f5f5;
+                height: 100vh;
+                padding: 0px;
+                margin: 0px;
+            }
+
+            .header-bar {
+                background-color: #3366FF;
+                height: 48px;
+                display: flex;
+                align-items: center;
+                padding-left: 3%;
+            }
+
+            .title{
+                color: white;
+                font-size: 18px;
+            }
+            
+            .layout{
+                display: flex;
+                flex-direction: row;
+                height: 100%;
+            }
+            .sidenav{
+                display: flex;
+                flex-direction: column;
+                width: 160px;
+                height: 100%;
+                background-color: white;
+                border: 1px solid #ccc;
+
+            }
+
+            .sidenav-item{
+                padding-left: 16px;
+                text-align: left;
+                font-size: 18px;
+                height: 64px;
+                background-color: white;
+                border: none;
+            }
+
+            .sidenav-item:hover{
+                background-color: rgb(201, 201, 201);
+                transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+                cursor: pointer;
+            }
+
+            .host-table{
+                width: 100%;
+                border-collapse: collapse;
+
+            }
+
+            th{
+                padding: 12px;
+                text-align: left;
+                background-color: #b5bdc7;
+                color: white;
+            }
+
+            tbody {
+                background-color: white;
+                transition: background-color 0.3s;
+            }
+
+            td {
+                height: 64px;
+            }
+            .content{
+                margin-left: 32px;
+                margin-right: 32px;
+                flex-grow: 1;
+            }
+
+            .add-btn{
+                background-color: #091A7A;
+                width: 128px;
+                height: 32px;
+                font-size: 14px;
+                border-radius: 4px;
+                color: white;
+                border: none;
+                transition: 0.3s;
+            }
+            .add-btn:hover{ background-color: #1f40ff;}
+
+            .info-section{
+                width: 100%;
+                margin-bottom: 24px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .dialog-container{
+                border: 1px solid #ccc;
+                height: 400px;
+                display: flex;
+            }
+
+            .dialog-container::backdrop {
+                background: rgba(0, 0, 0, 0.712);
+            }
+
+       
+            .add-host-btn{
+                width: 100%;
+                height: 48px;
+                background-color: rgb(168, 255, 168);
+            }
+
+            .negative-btn{
+                width: 100%;
+                height: 48px;
+                background-color: rgb(255, 168, 168);
+            }
+
+            .applet-list{
+                width: 100%;
+                height: 32px;
+                font-size: 18px;
+            }
+
+            .host-dialog-actions{
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .dialog-create-layout{
+                display: flex;
+                height: 100%;
+                flex-direction: column;
+                justify-content: space-between
+                
+            }
+
+            .host-dialog-container{
+                display: flex;
+                flex-grow: 1;
+                flex-direction: column;
+            }
+
+            .dialog-host-create-selection{
+                display: flex;
+                gap: 16px;
+                flex-direction: column;
+            }
+        </style>
+
+    </head>
+
+    <body>
+        <div class="header-bar">
+            <div class="title">
+                <span class="title">KVStore Management Plane</span>
+            </div>
+        </div>
+
+        <div class="layout">
+            <div class="sidenav">
+                <button class="sidenav-item">Server</button>
+                <button class="sidenav-item">Cluster Event</button>
+            </div>
+            <div class="content">
+                <h1>Host Directory</h1>
+                <div class="info-section">
+                    <span>Last Updated: Aug 3rd @ 20:12:14</span>
+                    <!-- <button class="add-btn">Add Host</button> -->
+                </div>
+                <table class="host-table">
+
+                    <thread>
+                        <th>Name</th>
+                        <th>HostIP</th>
+                        <th>Applet</th>
+                        <th>State</th>
+                        <th>Status</th>
+                        <!-- <th>Actions</th> -->
+                    </thread>
+                    
+                    <tbody id="server-list-body">
+                        <!-- Rows will be inserted here dynamically -->
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+        <!-- <dialog id="add-host-dialog" class="dialog-container"></dialog> -->
+
+    <script>
+        // Function to fetch server list from the backend
+        function loadServerListing() {
+            fetch("/serverList", {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'text/plain'
+                }
+            })
+            .then(response => response.text()) // Expect plain text response
+            .then(data => {
+                // Split the string into lines (each line contains data for one host)
+                const lines = data.split('\n');
+
+                // Get the table body element
+                const tableBody = document.getElementById("server-list-body");
+
+                // Clear any existing rows
+                tableBody.innerHTML = '';
+
+                // Iterate over the lines and create a new row for each host
+                lines.forEach((line) => {
+                    if (line.trim()) { // Check if the line is not empty
+                        const [name, ip, readyState, applet, status] = line.split(' ');
+
+                        const row = document.createElement('tr');
+
+                        // Add Name cell
+                        const nameCell = document.createElement('td');
+                        nameCell.textContent = name;
+                        row.appendChild(nameCell);
+
+                        // Add HostIP cell
+                        const ipCell = document.createElement('td');
+                        ipCell.textContent = ip;
+                        row.appendChild(ipCell);
+
+                        // Add Applet cell
+                        const appletCell = document.createElement('td');
+                        appletCell.textContent = applet;
+                        row.appendChild(appletCell);
+
+                        // Add State cell (use readyState as the state)
+                        const stateCell = document.createElement('td');
+                        stateCell.textContent = readyState === 'true' ? 'Ready' : 'Not Ready';
+                        row.appendChild(stateCell);
+
+                        // Add Status cell
+                        const statusCell = document.createElement('td');
+                        statusCell.textContent = status;
+                        row.appendChild(statusCell);
+
+                        // // Add Actions cell with a button
+                        // const actionsCell = document.createElement('td');
+                        // const actionButton = document.createElement('button');
+                        // actionButton.textContent = 'Go to task';
+                        // actionButton.onclick = function() {
+                        //     alert('Task for ' + name);
+                        //     // You can navigate to a different page or perform any other action here
+                        // };
+                        // actionsCell.appendChild(actionButton);
+                        // row.appendChild(actionsCell);
+
+                        // Append the row to the table body
+                        tableBody.appendChild(row);
+                    }
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching server list:', error);
+            });
+        }
+
+        function loadApplicationStates() {
+            fetch("/applicationStates")
+            .then(response => response.json()) // Parse the JSON response
+            .then(data => {
+                const appStatesElement = document.getElementById("app-states");
+                data.forEach(state => {
+                    const stateElement = document.createElement("p");
+                    stateElement.textContent = state;
+                    appStatesElement.appendChild(stateElement);
+                });
+            })
+            .catch(error => {
+                console.error('Error fetching application states:', error);
+            });
+        }
+
+        // Call the function to load the server list when the page loads
+        window.onload = function() {
+            loadServerListing();
+            // loadApplicationStates();
+        };
+    </script>
+</body>
+
+</html>

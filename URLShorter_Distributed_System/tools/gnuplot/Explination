@@ -1,0 +1,4 @@
+- It appears that initally the time to complete actually increases.
+- Afterwards the rate that it increases slows down. 
+- Then the completion hovers around 18s. This could be because once a thread has found a solution
+    all other threads will stop and stop searching. 

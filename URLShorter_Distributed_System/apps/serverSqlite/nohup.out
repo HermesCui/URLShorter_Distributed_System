@@ -1,0 +1,547 @@
+/virtual/athavans/URLShortner/logs/data.txt
+/virtual/athavans/URLShortner/db/
+/virtual/athavans/URLShortner/db/KVStore.db
+[P2PServerRunnable] Starting bootstrap procedures.
+Database recreated successfully.
+URLShortner: Entry setup completed for applet: KVSTORE
+KVServerRunnable: HTTP Server started successfully on port 45601
+P2P HTTP Server started successfully on port 45602
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc18
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc16
+[ClusterGossip] Heartbeat map was empty after cleanup. Reloaded seed data.
+Virtual Node added: dh2020pc18#0 with hash: 146784108520535445242939226238907665155
+Virtual Node added: dh2020pc18#1 with hash: 63777391695509580500858148662212127619
+Virtual Node added: dh2020pc18#2 with hash: 308497208195252408657017016236377345785
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc18
+Virtual Node added: dh2020pc19#0 with hash: 36976578247329255269759404895316581563
+Virtual Node added: dh2020pc19#1 with hash: 300696921290080033206925678146128384063
+Virtual Node added: dh2020pc19#2 with hash: 192064079526209662731065753160129522644
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc19
+Virtual Node added: dh2020pc16#0 with hash: 10578427340482964081353750659531729602
+Virtual Node added: dh2020pc16#1 with hash: 80171068066083153858183009821598834329
+Virtual Node added: dh2020pc16#2 with hash: 128259024051656019210710731712466292320
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc16
+Virtual Node added: dh2020pc20#0 with hash: 73274248225239839349349754185698883205
+Virtual Node added: dh2020pc20#1 with hash: 91510693198375185867536178051286445333
+Virtual Node added: dh2020pc20#2 with hash: 208096420760083547697070394557265876035
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc20
+[P2PClusterSyncRunnable] Current Cluster State:
+KVStore Hosts:
+ - dh2020pc18: Heartbeat=1729186663, Status=ONLINE
+ - dh2020pc19: Heartbeat=1729186662, Status=ONLINE
+ - dh2020pc16: Heartbeat=1729186663, Status=ONLINE
+ - dh2020pc20: Heartbeat=1729186662, Status=ONLINE
+LoadBalancer Hosts:
+Monitor Hosts:
+Offline Hosts:
+Anomaly Hosts:
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc16
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc16
+[ClusterGossip] Heartbeat map was empty after cleanup. Reloaded seed data.
+Virtual Node added: dh2020pc18#0 with hash: 146784108520535445242939226238907665155
+Virtual Node added: dh2020pc18#1 with hash: 63777391695509580500858148662212127619
+Virtual Node added: dh2020pc18#2 with hash: 308497208195252408657017016236377345785
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc18
+Virtual Node added: dh2020pc19#0 with hash: 36976578247329255269759404895316581563
+Virtual Node added: dh2020pc19#1 with hash: 300696921290080033206925678146128384063
+Virtual Node added: dh2020pc19#2 with hash: 192064079526209662731065753160129522644
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc19
+Virtual Node added: dh2020pc16#0 with hash: 10578427340482964081353750659531729602
+Virtual Node added: dh2020pc16#1 with hash: 80171068066083153858183009821598834329
+Virtual Node added: dh2020pc16#2 with hash: 128259024051656019210710731712466292320
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc16
+Virtual Node added: dh2020pc20#0 with hash: 73274248225239839349349754185698883205
+Virtual Node added: dh2020pc20#1 with hash: 91510693198375185867536178051286445333
+Virtual Node added: dh2020pc20#2 with hash: 208096420760083547697070394557265876035
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc20
+[P2PClusterSyncRunnable] Current Cluster State:
+KVStore Hosts:
+ - dh2020pc18: Heartbeat=1729186666, Status=ONLINE
+ - dh2020pc19: Heartbeat=1729186662, Status=ONLINE
+ - dh2020pc16: Heartbeat=1729186668, Status=ONLINE
+ - dh2020pc20: Heartbeat=1729186662, Status=ONLINE
+LoadBalancer Hosts:
+Monitor Hosts:
+Offline Hosts:
+Anomaly Hosts:
+Error during request to http://dh2020pc20:45602/gossip
+java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:956)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at libs.com.SystemMessageSender.issueRequest(SystemMessageSender.java:30)
+	at libs.p2p.P2PClusterSyncRunnable.run(P2PClusterSyncRunnable.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1065)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	... 3 more
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:204)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:873)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:961)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 9 more
+[P2PClusterSyncRunnable] No valid response from peer: dh2020pc20
+Error during request to http://dh2020pc20:45602/gossip
+java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:956)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at libs.com.SystemMessageSender.issueRequest(SystemMessageSender.java:30)
+	at libs.p2p.P2PClusterSyncRunnable.run(P2PClusterSyncRunnable.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1065)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	... 3 more
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:204)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:873)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:961)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 9 more
+[P2PClusterSyncRunnable] No valid response from peer: dh2020pc20
+[ClusterGossip] Heartbeat map was empty after cleanup. Reloaded seed data.
+Virtual Node added: dh2020pc18#0 with hash: 146784108520535445242939226238907665155
+Virtual Node added: dh2020pc18#1 with hash: 63777391695509580500858148662212127619
+Virtual Node added: dh2020pc18#2 with hash: 308497208195252408657017016236377345785
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc18
+Virtual Node added: dh2020pc19#0 with hash: 36976578247329255269759404895316581563
+Virtual Node added: dh2020pc19#1 with hash: 300696921290080033206925678146128384063
+Virtual Node added: dh2020pc19#2 with hash: 192064079526209662731065753160129522644
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc19
+Virtual Node added: dh2020pc16#0 with hash: 10578427340482964081353750659531729602
+Virtual Node added: dh2020pc16#1 with hash: 80171068066083153858183009821598834329
+Virtual Node added: dh2020pc16#2 with hash: 128259024051656019210710731712466292320
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc16
+[P2PClusterSyncRunnable] Current Cluster State:
+KVStore Hosts:
+ - dh2020pc18: Heartbeat=1729186666, Status=ONLINE
+ - dh2020pc19: Heartbeat=1729186662, Status=ONLINE
+ - dh2020pc16: Heartbeat=1729186668, Status=ONLINE
+ - dh2020pc20: Heartbeat=1729186662, Status=ANOMALY
+LoadBalancer Hosts:
+Monitor Hosts:
+Offline Hosts:
+Anomaly Hosts:
+ - dh2020pc20: Last Anomaly Timestamp=1729186673
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc19
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc19
+[ClusterGossip] Heartbeat map was empty after cleanup. Reloaded seed data.
+Virtual Node added: dh2020pc18#0 with hash: 146784108520535445242939226238907665155
+Virtual Node added: dh2020pc18#1 with hash: 63777391695509580500858148662212127619
+Virtual Node added: dh2020pc18#2 with hash: 308497208195252408657017016236377345785
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc18
+Virtual Node added: dh2020pc19#0 with hash: 36976578247329255269759404895316581563
+Virtual Node added: dh2020pc19#1 with hash: 300696921290080033206925678146128384063
+Virtual Node added: dh2020pc19#2 with hash: 192064079526209662731065753160129522644
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc19
+Virtual Node added: dh2020pc16#0 with hash: 10578427340482964081353750659531729602
+Virtual Node added: dh2020pc16#1 with hash: 80171068066083153858183009821598834329
+Virtual Node added: dh2020pc16#2 with hash: 128259024051656019210710731712466292320
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc16
+Virtual Node added: dh2020pc20#0 with hash: 73274248225239839349349754185698883205
+Virtual Node added: dh2020pc20#1 with hash: 91510693198375185867536178051286445333
+Virtual Node added: dh2020pc20#2 with hash: 208096420760083547697070394557265876035
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc20
+[P2PClusterSyncRunnable] Current Cluster State:
+KVStore Hosts:
+ - dh2020pc18: Heartbeat=1729186676, Status=ONLINE
+ - dh2020pc19: Heartbeat=1729186678, Status=ONLINE
+ - dh2020pc16: Heartbeat=1729186668, Status=ONLINE
+ - dh2020pc20: Heartbeat=1729186662, Status=ONLINE
+LoadBalancer Hosts:
+Monitor Hosts:
+Offline Hosts:
+Anomaly Hosts:
+Error during request to http://dh2020pc20:45602/gossip
+java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:956)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at libs.com.SystemMessageSender.issueRequest(SystemMessageSender.java:30)
+	at libs.p2p.P2PClusterSyncRunnable.run(P2PClusterSyncRunnable.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1065)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	... 3 more
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:204)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:873)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:961)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 9 more
+[P2PClusterSyncRunnable] No valid response from peer: dh2020pc20
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc18
+[ClusterGossip] Heartbeat map was empty after cleanup. Reloaded seed data.
+Virtual Node added: dh2020pc18#0 with hash: 146784108520535445242939226238907665155
+Virtual Node added: dh2020pc18#1 with hash: 63777391695509580500858148662212127619
+Virtual Node added: dh2020pc18#2 with hash: 308497208195252408657017016236377345785
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc18
+Virtual Node added: dh2020pc19#0 with hash: 36976578247329255269759404895316581563
+Virtual Node added: dh2020pc19#1 with hash: 300696921290080033206925678146128384063
+Virtual Node added: dh2020pc19#2 with hash: 192064079526209662731065753160129522644
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc19
+Virtual Node added: dh2020pc16#0 with hash: 10578427340482964081353750659531729602
+Virtual Node added: dh2020pc16#1 with hash: 80171068066083153858183009821598834329
+Virtual Node added: dh2020pc16#2 with hash: 128259024051656019210710731712466292320
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc16
+Virtual Node added: dh2020pc20#0 with hash: 73274248225239839349349754185698883205
+Virtual Node added: dh2020pc20#1 with hash: 91510693198375185867536178051286445333
+Virtual Node added: dh2020pc20#2 with hash: 208096420760083547697070394557265876035
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc20
+[P2PClusterSyncRunnable] Current Cluster State:
+KVStore Hosts:
+ - dh2020pc18: Heartbeat=1729186683, Status=ONLINE
+ - dh2020pc19: Heartbeat=1729186679, Status=ONLINE
+ - dh2020pc16: Heartbeat=1729186681, Status=ONLINE
+ - dh2020pc20: Heartbeat=1729186662, Status=ONLINE
+LoadBalancer Hosts:
+Monitor Hosts:
+Offline Hosts:
+Anomaly Hosts:
+Error during request to http://dh2020pc20:45602/gossip
+java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.HttpClientImpl.send(HttpClientImpl.java:956)
+	at java.net.http/jdk.internal.net.http.HttpClientFacade.send(HttpClientFacade.java:133)
+	at libs.com.SystemMessageSender.issueRequest(SystemMessageSender.java:30)
+	at libs.p2p.P2PClusterSyncRunnable.run(P2PClusterSyncRunnable.java:53)
+	at java.base/java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:572)
+	at java.base/java.util.concurrent.FutureTask.runAndReset(FutureTask.java:358)
+	at java.base/java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:305)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+	at java.base/java.lang.Thread.run(Thread.java:1570)
+Caused by: java.net.ConnectException
+	at java.net.http/jdk.internal.net.http.common.Utils.toConnectException(Utils.java:1065)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:227)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.checkRetryConnect(PlainHttpConnection.java:280)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$2(PlainHttpConnection.java:238)
+	at java.base/java.util.concurrent.CompletableFuture.uniHandle(CompletableFuture.java:934)
+	at java.base/java.util.concurrent.CompletableFuture$UniHandle.tryFire(CompletableFuture.java:911)
+	at java.base/java.util.concurrent.CompletableFuture.postComplete(CompletableFuture.java:510)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1773)
+	... 3 more
+Caused by: java.nio.channels.ClosedChannelException
+	at java.base/sun.nio.ch.SocketChannelImpl.ensureOpen(SocketChannelImpl.java:204)
+	at java.base/sun.nio.ch.SocketChannelImpl.beginConnect(SocketChannelImpl.java:873)
+	at java.base/sun.nio.ch.SocketChannelImpl.connect(SocketChannelImpl.java:961)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.lambda$connectAsync$1(PlainHttpConnection.java:210)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:571)
+	at java.net.http/jdk.internal.net.http.PlainHttpConnection.connectAsync(PlainHttpConnection.java:212)
+	... 9 more
+[P2PClusterSyncRunnable] No valid response from peer: dh2020pc20
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc16
+[ClusterGossip] Heartbeat map was empty after cleanup. Reloaded seed data.
+Virtual Node added: dh2020pc18#0 with hash: 146784108520535445242939226238907665155
+Virtual Node added: dh2020pc18#1 with hash: 63777391695509580500858148662212127619
+Virtual Node added: dh2020pc18#2 with hash: 308497208195252408657017016236377345785
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc18
+Virtual Node added: dh2020pc19#0 with hash: 36976578247329255269759404895316581563
+Virtual Node added: dh2020pc19#1 with hash: 300696921290080033206925678146128384063
+Virtual Node added: dh2020pc19#2 with hash: 192064079526209662731065753160129522644
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc19
+Virtual Node added: dh2020pc16#0 with hash: 10578427340482964081353750659531729602
+Virtual Node added: dh2020pc16#1 with hash: 80171068066083153858183009821598834329
+Virtual Node added: dh2020pc16#2 with hash: 128259024051656019210710731712466292320
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc16
+Virtual Node added: dh2020pc20#0 with hash: 73274248225239839349349754185698883205
+Virtual Node added: dh2020pc20#1 with hash: 91510693198375185867536178051286445333
+Virtual Node added: dh2020pc20#2 with hash: 208096420760083547697070394557265876035
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc20
+[P2PClusterSyncRunnable] Current Cluster State:
+KVStore Hosts:
+ - dh2020pc18: Heartbeat=1729186683, Status=ONLINE
+ - dh2020pc19: Heartbeat=1729186679, Status=ONLINE
+ - dh2020pc16: Heartbeat=1729186688, Status=ONLINE
+ - dh2020pc20: Heartbeat=1729186662, Status=ONLINE
+LoadBalancer Hosts:
+Monitor Hosts:
+Offline Hosts:
+Anomaly Hosts:
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc18
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc16
+[ClusterGossip] Host 'dh2020pc20' has been offline for too long. Removing from cluster state.
+[ClusterGossip] Host 'dh2020pc20' added to AnomalyNode due to unresponsiveness.
+[ClusterGossip] Heartbeat map was empty after cleanup. Reloaded seed data.
+Virtual Node added: dh2020pc18#0 with hash: 146784108520535445242939226238907665155
+Virtual Node added: dh2020pc18#1 with hash: 63777391695509580500858148662212127619
+Virtual Node added: dh2020pc18#2 with hash: 308497208195252408657017016236377345785
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc18
+Virtual Node added: dh2020pc19#0 with hash: 36976578247329255269759404895316581563
+Virtual Node added: dh2020pc19#1 with hash: 300696921290080033206925678146128384063
+Virtual Node added: dh2020pc19#2 with hash: 192064079526209662731065753160129522644
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc19
+Virtual Node added: dh2020pc16#0 with hash: 10578427340482964081353750659531729602
+Virtual Node added: dh2020pc16#1 with hash: 80171068066083153858183009821598834329
+Virtual Node added: dh2020pc16#2 with hash: 128259024051656019210710731712466292320
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc16
+[P2PClusterSyncRunnable] Current Cluster State:
+KVStore Hosts:
+ - dh2020pc18: Heartbeat=1729186693, Status=ONLINE
+ - dh2020pc19: Heartbeat=1729186679, Status=ONLINE
+ - dh2020pc16: Heartbeat=1729186693, Status=ONLINE
+LoadBalancer Hosts:
+Monitor Hosts:
+Offline Hosts:
+ - dh2020pc20
+Anomaly Hosts:
+ - dh2020pc20: Last Anomaly Timestamp=1729186693
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc16
+[ClusterGossip] Host 'dh2020pc20' has been offline for too long. Removing from cluster state.
+[ClusterGossip] Host 'dh2020pc20' added to AnomalyNode due to unresponsiveness.
+[ClusterGossip] Heartbeat map was empty after cleanup. Reloaded seed data.
+Virtual Node added: dh2020pc18#0 with hash: 146784108520535445242939226238907665155
+Virtual Node added: dh2020pc18#1 with hash: 63777391695509580500858148662212127619
+Virtual Node added: dh2020pc18#2 with hash: 308497208195252408657017016236377345785
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc18
+Virtual Node added: dh2020pc19#0 with hash: 36976578247329255269759404895316581563
+Virtual Node added: dh2020pc19#1 with hash: 300696921290080033206925678146128384063
+Virtual Node added: dh2020pc19#2 with hash: 192064079526209662731065753160129522644
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc19
+Virtual Node added: dh2020pc16#0 with hash: 10578427340482964081353750659531729602
+Virtual Node added: dh2020pc16#1 with hash: 80171068066083153858183009821598834329
+Virtual Node added: dh2020pc16#2 with hash: 128259024051656019210710731712466292320
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc16
+[P2PClusterSyncRunnable] Current Cluster State:
+KVStore Hosts:
+ - dh2020pc18: Heartbeat=1729186693, Status=ONLINE
+ - dh2020pc19: Heartbeat=1729186679, Status=ONLINE
+ - dh2020pc16: Heartbeat=1729186698, Status=ONLINE
+LoadBalancer Hosts:
+Monitor Hosts:
+Offline Hosts:
+ - dh2020pc20
+Anomaly Hosts:
+ - dh2020pc20: Last Anomaly Timestamp=1729186698
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc19
+[ClusterGossip] Host 'dh2020pc20' has been offline for too long. Removing from cluster state.
+[ClusterGossip] Host 'dh2020pc20' added to AnomalyNode due to unresponsiveness.
+[ClusterGossip] Heartbeat map was empty after cleanup. Reloaded seed data.
+Virtual Node added: dh2020pc18#0 with hash: 146784108520535445242939226238907665155
+Virtual Node added: dh2020pc18#1 with hash: 63777391695509580500858148662212127619
+Virtual Node added: dh2020pc18#2 with hash: 308497208195252408657017016236377345785
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc18
+Virtual Node added: dh2020pc19#0 with hash: 36976578247329255269759404895316581563
+Virtual Node added: dh2020pc19#1 with hash: 300696921290080033206925678146128384063
+Virtual Node added: dh2020pc19#2 with hash: 192064079526209662731065753160129522644
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc19
+Virtual Node added: dh2020pc16#0 with hash: 10578427340482964081353750659531729602
+Virtual Node added: dh2020pc16#1 with hash: 80171068066083153858183009821598834329
+Virtual Node added: dh2020pc16#2 with hash: 128259024051656019210710731712466292320
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc16
+[P2PClusterSyncRunnable] Current Cluster State:
+KVStore Hosts:
+ - dh2020pc18: Heartbeat=1729186693, Status=ONLINE
+ - dh2020pc19: Heartbeat=1729186703, Status=ONLINE
+ - dh2020pc16: Heartbeat=1729186698, Status=ONLINE
+LoadBalancer Hosts:
+Monitor Hosts:
+Offline Hosts:
+ - dh2020pc20
+Anomaly Hosts:
+ - dh2020pc20: Last Anomaly Timestamp=1729186703
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc16
+[ClusterGossip] Host 'dh2020pc20' has been offline for too long. Removing from cluster state.
+[ClusterGossip] Host 'dh2020pc20' added to AnomalyNode due to unresponsiveness.
+[ClusterGossip] Heartbeat map was empty after cleanup. Reloaded seed data.
+Virtual Node added: dh2020pc18#0 with hash: 146784108520535445242939226238907665155
+Virtual Node added: dh2020pc18#1 with hash: 63777391695509580500858148662212127619
+Virtual Node added: dh2020pc18#2 with hash: 308497208195252408657017016236377345785
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc18
+Virtual Node added: dh2020pc19#0 with hash: 36976578247329255269759404895316581563
+Virtual Node added: dh2020pc19#1 with hash: 300696921290080033206925678146128384063
+Virtual Node added: dh2020pc19#2 with hash: 192064079526209662731065753160129522644
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc19
+Virtual Node added: dh2020pc16#0 with hash: 10578427340482964081353750659531729602
+Virtual Node added: dh2020pc16#1 with hash: 80171068066083153858183009821598834329
+Virtual Node added: dh2020pc16#2 with hash: 128259024051656019210710731712466292320
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc16
+[P2PClusterSyncRunnable] Current Cluster State:
+KVStore Hosts:
+ - dh2020pc18: Heartbeat=1729186693, Status=ONLINE
+ - dh2020pc19: Heartbeat=1729186703, Status=ONLINE
+ - dh2020pc16: Heartbeat=1729186708, Status=ONLINE
+LoadBalancer Hosts:
+Monitor Hosts:
+Offline Hosts:
+ - dh2020pc20
+Anomaly Hosts:
+ - dh2020pc20: Last Anomaly Timestamp=1729186708
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc16
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc18
+[ClusterGossip] Host 'dh2020pc20' has been offline for too long. Removing from cluster state.
+[ClusterGossip] Host 'dh2020pc20' added to AnomalyNode due to unresponsiveness.
+[ClusterGossip] Heartbeat map was empty after cleanup. Reloaded seed data.
+Virtual Node added: dh2020pc18#0 with hash: 146784108520535445242939226238907665155
+Virtual Node added: dh2020pc18#1 with hash: 63777391695509580500858148662212127619
+Virtual Node added: dh2020pc18#2 with hash: 308497208195252408657017016236377345785
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc18
+Virtual Node added: dh2020pc19#0 with hash: 36976578247329255269759404895316581563
+Virtual Node added: dh2020pc19#1 with hash: 300696921290080033206925678146128384063
+Virtual Node added: dh2020pc19#2 with hash: 192064079526209662731065753160129522644
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc19
+Virtual Node added: dh2020pc16#0 with hash: 10578427340482964081353750659531729602
+Virtual Node added: dh2020pc16#1 with hash: 80171068066083153858183009821598834329
+Virtual Node added: dh2020pc16#2 with hash: 128259024051656019210710731712466292320
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc16
+[P2PClusterSyncRunnable] Current Cluster State:
+KVStore Hosts:
+ - dh2020pc18: Heartbeat=1729186713, Status=ONLINE
+ - dh2020pc19: Heartbeat=1729186704, Status=ONLINE
+ - dh2020pc16: Heartbeat=1729186713, Status=ONLINE
+LoadBalancer Hosts:
+Monitor Hosts:
+Offline Hosts:
+ - dh2020pc20
+Anomaly Hosts:
+ - dh2020pc20: Last Anomaly Timestamp=1729186713
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc19
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc19
+[ClusterGossip] Host 'dh2020pc20' has been offline for too long. Removing from cluster state.
+[ClusterGossip] Host 'dh2020pc20' added to AnomalyNode due to unresponsiveness.
+[ClusterGossip] Heartbeat map was empty after cleanup. Reloaded seed data.
+Virtual Node added: dh2020pc18#0 with hash: 146784108520535445242939226238907665155
+Virtual Node added: dh2020pc18#1 with hash: 63777391695509580500858148662212127619
+Virtual Node added: dh2020pc18#2 with hash: 308497208195252408657017016236377345785
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc18
+Virtual Node added: dh2020pc19#0 with hash: 36976578247329255269759404895316581563
+Virtual Node added: dh2020pc19#1 with hash: 300696921290080033206925678146128384063
+Virtual Node added: dh2020pc19#2 with hash: 192064079526209662731065753160129522644
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc19
+Virtual Node added: dh2020pc16#0 with hash: 10578427340482964081353750659531729602
+Virtual Node added: dh2020pc16#1 with hash: 80171068066083153858183009821598834329
+Virtual Node added: dh2020pc16#2 with hash: 128259024051656019210710731712466292320
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc16
+[P2PClusterSyncRunnable] Current Cluster State:
+KVStore Hosts:
+ - dh2020pc18: Heartbeat=1729186713, Status=ONLINE
+ - dh2020pc19: Heartbeat=1729186718, Status=ONLINE
+ - dh2020pc16: Heartbeat=1729186713, Status=ONLINE
+LoadBalancer Hosts:
+Monitor Hosts:
+Offline Hosts:
+ - dh2020pc20
+Anomaly Hosts:
+ - dh2020pc20: Last Anomaly Timestamp=1729186718
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc18
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc16
+[ClusterGossip] Host 'dh2020pc20' has been offline for too long. Removing from cluster state.
+[ClusterGossip] Host 'dh2020pc20' added to AnomalyNode due to unresponsiveness.
+[ClusterGossip] Heartbeat map was empty after cleanup. Reloaded seed data.
+Virtual Node added: dh2020pc18#0 with hash: 146784108520535445242939226238907665155
+Virtual Node added: dh2020pc18#1 with hash: 63777391695509580500858148662212127619
+Virtual Node added: dh2020pc18#2 with hash: 308497208195252408657017016236377345785
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc18
+Virtual Node added: dh2020pc19#0 with hash: 36976578247329255269759404895316581563
+Virtual Node added: dh2020pc19#1 with hash: 300696921290080033206925678146128384063
+Virtual Node added: dh2020pc19#2 with hash: 192064079526209662731065753160129522644
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc19
+Virtual Node added: dh2020pc16#0 with hash: 10578427340482964081353750659531729602
+Virtual Node added: dh2020pc16#1 with hash: 80171068066083153858183009821598834329
+Virtual Node added: dh2020pc16#2 with hash: 128259024051656019210710731712466292320
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc16
+[P2PClusterSyncRunnable] Current Cluster State:
+KVStore Hosts:
+ - dh2020pc18: Heartbeat=1729186723, Status=ONLINE
+ - dh2020pc19: Heartbeat=1729186718, Status=ONLINE
+ - dh2020pc16: Heartbeat=1729186723, Status=ONLINE
+LoadBalancer Hosts:
+Monitor Hosts:
+Offline Hosts:
+ - dh2020pc20
+Anomaly Hosts:
+ - dh2020pc20: Last Anomaly Timestamp=1729186723
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc19
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc19
+[ClusterGossip] Host 'dh2020pc20' has been offline for too long. Removing from cluster state.
+[ClusterGossip] Host 'dh2020pc20' added to AnomalyNode due to unresponsiveness.
+[ClusterGossip] Heartbeat map was empty after cleanup. Reloaded seed data.
+Virtual Node added: dh2020pc18#0 with hash: 146784108520535445242939226238907665155
+Virtual Node added: dh2020pc18#1 with hash: 63777391695509580500858148662212127619
+Virtual Node added: dh2020pc18#2 with hash: 308497208195252408657017016236377345785
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc18
+Virtual Node added: dh2020pc19#0 with hash: 36976578247329255269759404895316581563
+Virtual Node added: dh2020pc19#1 with hash: 300696921290080033206925678146128384063
+Virtual Node added: dh2020pc19#2 with hash: 192064079526209662731065753160129522644
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc19
+Virtual Node added: dh2020pc16#0 with hash: 10578427340482964081353750659531729602
+Virtual Node added: dh2020pc16#1 with hash: 80171068066083153858183009821598834329
+Virtual Node added: dh2020pc16#2 with hash: 128259024051656019210710731712466292320
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc16
+[P2PClusterSyncRunnable] Current Cluster State:
+KVStore Hosts:
+ - dh2020pc18: Heartbeat=1729186723, Status=ONLINE
+ - dh2020pc19: Heartbeat=1729186728, Status=ONLINE
+ - dh2020pc16: Heartbeat=1729186723, Status=ONLINE
+LoadBalancer Hosts:
+Monitor Hosts:
+Offline Hosts:
+ - dh2020pc20
+Anomaly Hosts:
+ - dh2020pc20: Last Anomaly Timestamp=1729186728
+[P2PClusterSyncRunnable] Successfully merged cluster state from peer: dh2020pc19
+[ClusterGossip] Host 'dh2020pc20' has been offline for too long. Removing from cluster state.
+[ClusterGossip] Host 'dh2020pc20' added to AnomalyNode due to unresponsiveness.
+[ClusterGossip] Heartbeat map was empty after cleanup. Reloaded seed data.
+Virtual Node added: dh2020pc18#0 with hash: 146784108520535445242939226238907665155
+Virtual Node added: dh2020pc18#1 with hash: 63777391695509580500858148662212127619
+Virtual Node added: dh2020pc18#2 with hash: 308497208195252408657017016236377345785
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc18
+Virtual Node added: dh2020pc19#0 with hash: 36976578247329255269759404895316581563
+Virtual Node added: dh2020pc19#1 with hash: 300696921290080033206925678146128384063
+Virtual Node added: dh2020pc19#2 with hash: 192064079526209662731065753160129522644
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc19
+Virtual Node added: dh2020pc16#0 with hash: 10578427340482964081353750659531729602
+Virtual Node added: dh2020pc16#1 with hash: 80171068066083153858183009821598834329
+Virtual Node added: dh2020pc16#2 with hash: 128259024051656019210710731712466292320
+[P2PClusterSyncRunnable] Added host to hash ring: dh2020pc16
+[P2PClusterSyncRunnable] Current Cluster State:
+KVStore Hosts:
+ - dh2020pc18: Heartbeat=1729186723, Status=ONLINE
+ - dh2020pc19: Heartbeat=1729186733, Status=ONLINE
+ - dh2020pc16: Heartbeat=1729186723, Status=ONLINE
+LoadBalancer Hosts:
+Monitor Hosts:
+Offline Hosts:
+ - dh2020pc20
+Anomaly Hosts:
+ - dh2020pc20: Last Anomaly Timestamp=1729186733
